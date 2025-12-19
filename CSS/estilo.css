@@ -1,163 +1,97 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
-    background-image: url(./IMAGENS/outrun-neon-dark-background-purple-3840x2160-4523.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-    font-family: 'VT323', monospace;
-    color: #0051ff;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 30px;
-    height: 900px;
-    width: 900px;
-    object-fit: cover;
+  min-height: 100vh;
+  font-family: 'VT323', monospace;
+  background-image: url(./IMAGENS/outrun-neon-dark-background-purple-3840x2160-4523.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
 }
 
-.png .imEstud img{
-    width: 220px;
-    height: 170px;
-    object-fit: cover;
-    /*padding-top: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: right;
-    gap: 10px;*/
-    position: absolute;
-    top: 30px;
-    left: 600px;
+/* CONTAINER PRINCIPAL */
+.layout{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-.ti .tit .titulo{
-    font-size: 48px;
-    color: #ffffff;
-    /*text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea;*/
-    /*margin: 50;*/
-    position: absolute;
-    top: 200px;
-    left: 100px;
-
-    
+/* LOGO */
+.logo img{
+  width: 140px;
+  max-width: 100%;
 }
 
-.ti .tit .texto{
-    font-size: 25px;
-    color: rgb(255, 255, 255);
-    /*margin: 0;
-    padding: 0;*/
-    position: absolute;
-    top: 330px;
-    left: 100px;
+/* CONTEÚDO CENTRAL */
+.conteudo{
+  text-align: center;
+  max-width: 900px;
 }
 
-/*apresentaçao dos alunos*/
-.container{
-    height: 50px;
-    width: 300px;
-    position: absolute;
-    bottom: 5px;   /* 👈 garante que apareça */
-    left: 400px;
-    overflow: hidden;
+.titulo{
+  font-size: 48px;
+  margin-bottom: 20px;
 }
 
-
-#nome{
-    position: absolute;
-    bottom: -40px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 24px;
-    color: #ffffff;
-    opacity: 0;
-    transition: bottom 1.5s ease, opacity 1.5s ease;
+.texto{
+  font-size: 22px;
+  line-height: 1.4;
 }
 
-/*apresentaçao dos professores*/
+/* RODAPÉ COM NOMES */
+.rodape{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.container,
 .container2{
-    height: 50px;
-    width: 300px;
-    position: absolute;
-    bottom: 5px;
-    left: 700px; /*direita*/
-    overflow: hidden;
+  height: 40px;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
 }
 
+#nome,
 #professor{
-    position: absolute;
-    bottom: -40px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 24px;
-    color: #ffffff;
-    opacity: 0;
-    transition: bottom 1.5s ease, opacity 1.5s ease;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  font-size: 22px;
+  opacity: 0;
+  transition: bottom 1.2s ease, opacity 1.2s ease;
 }
 
+/* MOBILE */
+@media (max-width: 768px){
 
+  .titulo{
+    font-size: 28px;
+  }
 
-/* RESPONSIVO PARA CELULAR (media query) */
-@media (max-width: 768px) {
+  .texto{
+    font-size: 18px;
+  }
 
-    body{
-        padding: 10px;
-        text-align: center;
-    }
+  .rodape{
+    flex-direction: column;
+    align-items: center;
+  }
 
-    /* Alunos */
-    .container{
-        width: 100%;
-        left: 0;
-        right: 0;
-        bottom: 80px;
-        margin: auto;
-    }
-
-    #nome{
-        font-size: 20px;
-    }
-
-    /* Professores */
-    .container2{
-        width: 100%;
-        left: 0;
-        right: 0;
-        bottom: 40px;
-        margin: auto;
-    }
-
-    #professor{
-        font-size: 20px;
-    }
-
-    /* Título */
-    .ti .tit .titulo{
-        font-size: 28px;
-        left: 0;
-        right: 0;
-        top: 140px;
-        margin: auto;
-    }
-
-    .ti .tit .texto{
-        font-size: 18px;
-        left: 0;
-        right: 0;
-        top: 230px;
-        margin: auto;
-    }
-
-    /* Logo */
-    .png .imEstud img{
-        width: 100px;
-        height: 100px;
-        left: 0;
-        right: 0;
-        top: 20px;
-        margin: auto;
-    }
+  .container,
+  .container2{
+    width: 100%;
+  }
 }
