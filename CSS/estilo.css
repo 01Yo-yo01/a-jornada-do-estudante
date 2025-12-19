@@ -1,3 +1,6 @@
+/* CSS NOVO – layout flexbox (opção 2)
+   Foco: performance + responsividade
+   Mantém animações de alunos/professores */
 
 *{
   margin: 0;
@@ -56,7 +59,7 @@ body{
 
 .container,
 .container2{
-  height: 40px;
+  height: 60px; /* altura maior para mobile */
   flex: 1;
   overflow: hidden;
   position: relative;
@@ -66,16 +69,18 @@ body{
 #nome,
 #professor{
   position: absolute;
-  bottom: -40px;
   left: 0;
   right: 0;
   font-size: 22px;
   opacity: 0;
-  transition: bottom 1.2s ease, opacity 1.2s ease;
+  transform: translateY(40px); /* começa fora da área visível */
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  will-change: transform, opacity; /* otimização de performance */
+}
 }
 
 /* MOBILE */
-@media (max-width: 768px){
+@media (max-width: 768px){{
 
   .titulo{
     font-size: 28px;
@@ -93,5 +98,6 @@ body{
   .container,
   .container2{
     width: 100%;
+    margin-bottom: 10px; /* espaço para animação aparecer */
   }
 }

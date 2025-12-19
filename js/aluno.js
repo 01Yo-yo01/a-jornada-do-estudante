@@ -40,21 +40,20 @@ const nomeElemento = document.getElementById("nome");
 let index = 0;
 
 function mostrarNome() {
-    // Reset (desce e esconde)
-    nomeElemento.style.bottom = "-40px";
+    // RESET
+    nomeElemento.style.transform = "translateY(40px)";
     nomeElemento.style.opacity = "0";
 
-    // Troca o texto
     nomeElemento.textContent = nomes[index];
 
-    // Força o reflow (reinicia animação)
-    void nomeElemento.offsetWidth;
+    // força reinício da animação
+    nomeElemento.getBoundingClientRect();
 
-    // Sobe e aparece
-    nomeElemento.style.bottom = "10px";
+    // ENTRA
+    nomeElemento.style.transform = "translateY(0)";
     nomeElemento.style.opacity = "1";
 
-    // Some depois de 2s
+    // SAI
     setTimeout(() => {
         nomeElemento.style.opacity = "0";
     }, 2000);
@@ -62,6 +61,7 @@ function mostrarNome() {
     index = (index + 1) % nomes.length;
 }
 
-// Inicia
 mostrarNome();
 setInterval(mostrarNome, 3000);
+
+
