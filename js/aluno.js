@@ -1,5 +1,6 @@
 const nomes = [
     "Lucas Gomes",
+    "Clara Neves",
     "Adila N. Moraes",
     "Ágatha Assunção",
     "Yasmim Pantoja",
@@ -8,7 +9,7 @@ const nomes = [
     "Pedro Henrique",
     "Iuri de Matos",
     "Pedro Henrique",
-    "João Paplo",
+    "João Pablo",
     "Hanna Lima",
     "Lucas Freire",
     "Armando D. Ribeiro",
