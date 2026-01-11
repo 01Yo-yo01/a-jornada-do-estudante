@@ -1,41 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jornada do Estudante</title>
 
-  <!-- CSS principal -->
+  <!-- CSS -->
   <link rel="stylesheet" href="./CSS/estilo.css">
 </head>
+
 <body>
 
-  <!-- CONTAINER PRINCIPAL
-       Flexbox evita position:absolute excessivo
-       Facilita responsividade -->
   <main class="layout">
-
-    <!-- LOGO -->
-    <div class="logo">
-      <img src="./CSS/IMAGENS/jornada.png" alt="Logo Jornada do Estudante">
-    </div>
 
     <!-- TEXTO PRINCIPAL -->
     <section class="conteudo">
       <h1 class="titulo">Jogo Educacional<br>A Jornada do Estudante</h1>
       <p class="texto">
-        "A Jornada do Estudante" consiste no desenvolvimento de um jogo
-        educacional voltado a estudantes do Ensino Médio. Nosso objetivo é
-        desenvolver uma ferramenta interativa e divertida.
+        "A Jornada do Etudante" consite no
+        desenvolvimento de um jogo Educacional
+        voltado a estudantes do Ensino Médio. nosso
+        é desenvolver uma ferramenta interativa e divertida.
       </p>
     </section>
 
-    <!-- RODAPÉ COM NOMES -->
+    <!-- IMAGEM PLAY -->
+    <div class="inicio">
+      <img src="./CSS/IMAGENS/PLAYY.jpeg" alt="imagem do play do jogo">
+    </div>
+
+    <!-- TEXTO SECUNDÁRIO -->
+    <section class="conteudo2">
+      <p class="texto2">
+        ENEM é a principal forma de acesso ao ensino superior no Brasil e exige dos estudantes amplo domínio de diversas
+        áreas do conhecimento. No entanto, os métodos tradicionais de estudo nem sempre conseguem motivar e engajar os
+        alunos. Nesse contexto, os jogos educacionais surgem como uma alternativa para tornar o aprendizado mais
+        dinâmico, promovendo a revisão de conteúdos e o desenvolvimento de habilidades como raciocínio lógico, resolução
+        de problemas e trabalho em equipe.
+
+        Os Projetos Integradores, presentes nos cursos técnicos de nível médio dos Institutos Federais, buscam
+        relacionar os conhecimentos adquiridos ao longo da formação. Assim, o desenvolvimento de um jogo educacional se
+        apresenta como uma estratégia para melhorar o processo de ensino-aprendizagem, tornando-o mais envolvente e
+        eficiente.
+
+        Dessa forma, o projeto propõe a criação do jogo educacional “A Jornada do Estudante”, voltado à revisão de
+        conteúdos do Ensino Médio relacionados às disciplinas de Filosofia, Língua Portuguesa, Biologia e Física,
+        integradas às áreas técnicas de Informática. O projeto visa contribuir com a preparação para o ENEM e apoiar a
+        comunidade estudantil do IFPA – Campus Castanhal, alinhando-se ao papel social da instituição de oferecer uma
+        formação contextualizada e significativa.
+      </p>
+    </section>
+
+    <!-- MAPA DO JOGO -->
+    <div class="mapa-jogo animar-scroll">
+
+      <!-- DESKTOP -->
+      <svg class="mapa-desktop" viewBox="0 0 900 180">
+        <line class="linha l1" x1="108" y1="90" x2="232" y2="90" />
+        <line class="linha l2" x1="288" y1="90" x2="412" y2="90" />
+        <line class="linha l3" x1="468" y1="90" x2="592" y2="90" />
+        <line class="linha l4" x1="648" y1="90" x2="772" y2="90" />
+
+        <circle class="fase f1" cx="80" cy="90" r="28" />
+        <text class="texto-fase f1" x="80" y="90">Filosofia</text>
+
+        <circle class="fase f2" cx="260" cy="90" r="28" />
+        <text class="texto-fase f2" x="260" y="90">Biologia</text>
+
+        <circle class="fase f3" cx="440" cy="90" r="28" />
+        <text class="texto-fase f3" x="440" y="90">Física</text>
+
+        <circle class="fase f4" cx="620" cy="90" r="28" />
+        <text class="texto-fase f4" x="620" y="90">Português</text>
+
+        <circle class="fase f5" cx="820" cy="90" r="28" />
+        <text class="texto-fase f5" x="820" y="90" font-size="9">Empreend.</text>
+      </svg>
+
+      <!-- MOBILE -->
+      <svg class="mapa-mobile" viewBox="0 0 180 520">
+        <line class="linha l1" x1="90" y1="68" x2="90" y2="132" />
+        <line class="linha l2" x1="90" y1="168" x2="90" y2="232" />
+        <line class="linha l3" x1="90" y1="268" x2="90" y2="332" />
+        <line class="linha l4" x1="90" y1="368" x2="90" y2="432" />
+
+        <circle class="fase f1" cx="90" cy="40" r="24" />
+        <text class="texto-fase f1" x="90" y="40">Filosofia</text>
+
+        <circle class="fase f2" cx="90" cy="140" r="24" />
+        <text class="texto-fase f2" x="90" y="140">Biologia</text>
+
+        <circle class="fase f3" cx="90" cy="240" r="24" />
+        <text class="texto-fase f3" x="90" y="240">Física</text>
+
+        <circle class="fase f4" cx="90" cy="340" r="24" />
+        <text class="texto-fase f4" x="90" y="340">Português</text>
+
+        <circle class="fase f5" cx="90" cy="460" r="24" />
+        <text class="texto-fase f5" x="90" y="460" font-size="9">Empreend.</text>
+      </svg>
+
+    </div>
+
+    <!-- RODAPÉ COM ANIMAÇÕES -->
     <footer class="rodape">
       <div class="container">
         <span id="nome"></span>
       </div>
-
       <div class="container2">
         <span id="professor"></span>
       </div>
@@ -43,8 +115,11 @@
 
   </main>
 
-  <!-- JS mantido (animações) -->
+  <!-- JS (ORDEM IMPORTA) -->
   <script src="./js/aluno.js"></script>
   <script src="./js/professor.js"></script>
+  <script src="./js/scroll.js"></script>
+
 </body>
+
 </html>

@@ -18,7 +18,7 @@ const nomes = [
     "Aylla Lunara",
     "Kevyn S. Espindola",
     "Sanderson Costa",
-    "Allana Maria",
+    "Alanna Maria",
     "Irã Seabra",
     "Maria Leticia",
     "Bianca Oliveira",
@@ -33,7 +33,7 @@ const nomes = [
     "José Victor",
     "Auriane Monteiro",
     "Paulo R. Brito",
-    "Jheniffer de N.",
+    "Jheniffer do N.",
     "Lucas Kensuke"
 ];
 

@@ -1,103 +1,206 @@
-/* CSS NOVO – layout flexbox (opção 2)
-   Foco: performance + responsividade
-   Mantém animações de alunos/professores */
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   min-height: 100vh;
   font-family: 'VT323', monospace;
-  background-image: url(./IMAGENS/outrun-neon-dark-background-purple-3840x2160-4523.jpg);
-  background-size: cover;
-  background-position: center;
-  color: #ffffff;
+  background: url(./IMAGENS/outrun-neon-dark-background-purple-3840x2160-4523.jpg) center/cover no-repeat;
+  color: #fff;
 }
 
-/* CONTAINER PRINCIPAL */
-.layout{
-  min-height: 100vh;
+/* LAYOUT */
+.layout {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 40px;
   padding: 20px;
-}
-
-/* LOGO */
-.logo img{
-  width: 140px;
-  max-width: 100%;
-}
-
-/* CONTEÚDO CENTRAL */
-.conteudo{
   text-align: center;
+}
+
+/* TEXTO */
+.conteudo,
+.conteudo2 {
   max-width: 900px;
 }
 
-.titulo{
+.titulo {
   font-size: 48px;
-  margin-bottom: 20px;
 }
 
-.texto{
+.texto,
+.texto2 {
   font-size: 22px;
   line-height: 1.4;
 }
 
-/* RODAPÉ COM NOMES */
-.rodape{
+/* IMAGEM */
+.inicio img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 16px;
+  border: 2px solid #00f7ff;
+  box-shadow: 0 0 10px #00f7ff, 0 0 30px rgba(0, 247, 255, .8);
+  transition: transform .3s ease;
+}
+
+.inicio img:hover {
+  transform: scale(1.05);
+}
+
+/* MAPA */
+.mapa-jogo {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* VISIBILIDADE SVG */
+.mapa-desktop {
+  display: block;
+}
+
+.mapa-mobile {
+  display: none;
+}
+
+/* FASES */
+.fase {
+  fill: #0a0a0a;
+  stroke: #00f7ff;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 8px #00f7ff);
+}
+
+.texto-fase {
+  fill: #fff;
+  font-size: 10px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+  filter: drop-shadow(0 0 4px #00f7ff);
+}
+
+/* BASE ANIMAÇÃO */
+.animar-scroll .fase,
+.animar-scroll .texto-fase,
+.animar-scroll .linha {
+  opacity: 0;
+}
+
+/* ATIVA NO SCROLL */
+.animar-scroll.ativo .fase,
+.animar-scroll.ativo .texto-fase {
+  animation: aparecer .6s ease forwards;
+}
+
+/* DELAYS FASES */
+.animar-scroll.ativo .f1 {
+  animation-delay: .2s
+}
+
+.animar-scroll.ativo .f2 {
+  animation-delay: .5s
+}
+
+.animar-scroll.ativo .f3 {
+  animation-delay: .8s
+}
+
+.animar-scroll.ativo .f4 {
+  animation-delay: 1.1s
+}
+
+.animar-scroll.ativo .f5 {
+  animation-delay: 1.4s
+}
+
+@keyframes aparecer {
+  from {
+    transform: scale(.4);
+    opacity: 0
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1
+  }
+}
+
+/* LINHAS */
+.animar-scroll .linha {
+  stroke: #00f7ff;
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+  stroke-dashoffset: 20;
+  filter: drop-shadow(0 0 6px #00f7ff);
+}
+
+.animar-scroll.ativo .linha {
+  animation: linhaAparecer .6s ease forwards;
+}
+
+/* DELAYS LINHAS */
+.animar-scroll.ativo .l1 {
+  animation-delay: .35s
+}
+
+.animar-scroll.ativo .l2 {
+  animation-delay: .65s
+}
+
+.animar-scroll.ativo .l3 {
+  animation-delay: .95s
+}
+
+.animar-scroll.ativo .l4 {
+  animation-delay: 1.25s
+}
+
+@keyframes linhaAparecer {
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* RODAPÉ */
+/* ===== RODAPÉ COM NOMES (FINAL) ===== */
+.rodape {
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  margin-top: 40px;
 }
 
+/* containers que seguram a animação */
 .container,
-.container2{
-  height: 60px; /* altura maior para mobile */
+.container2 {
   flex: 1;
+  height: 40px;
+  /* espaço suficiente */
   overflow: hidden;
+  /* corta fora da área */
   position: relative;
-  text-align: center;
 }
 
+/* elementos animados pelo JS */
 #nome,
-#professor{
+#professor {
   position: absolute;
   left: 0;
   right: 0;
+
+  display: block;
+  text-align: center;
   font-size: 22px;
+
   opacity: 0;
-  transform: translateY(40px); /* começa fora da área visível */
+  transform: translateY(40px);
+
   transition: transform 0.8s ease, opacity 0.8s ease;
-  will-change: transform, opacity; /* otimização de performance */
-}
-}
-
-/* MOBILE */
-@media (max-width: 768px){{
-
-  .titulo{
-    font-size: 28px;
-  }
-
-  .texto{
-    font-size: 18px;
-  }
-
-  .rodape{
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .container,
-  .container2{
-    width: 100%;
-    margin-bottom: 10px; /* espaço para animação aparecer */
-  }
+  will-change: transform, opacity;
 }
