@@ -166,6 +166,173 @@ body {
   }
 }
 
+
+/* TEXTO 3*/
+.conteudo,
+.conteudo3 {
+  max-width: 900px;
+}
+
+.titulo {
+  font-size: 48px;
+}
+
+.texto,
+.texto3 {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+
+/* IMAGEM FASES*/
+.fase img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 16px;
+  border: 2px solid #00f7ff;
+  box-shadow: 0 0 10px #00f7ff, 0 0 0, 6px rgba(0, 247, 255, .8);
+  transition: transform .3s ease;
+}
+
+.fase img:hover {
+  transform: scale(1.05);
+}
+
+/* IMAGEM IF*/
+.fase img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 16px;
+  border: 2px solid #00f7ff;
+  box-shadow: 0 0 10px #00f7ff, 0 0 0, 6px rgba(0, 247, 255, .8);
+  transition: transform .3s ease;
+}
+
+.fase img:hover {
+  transform: scale(1.05);
+}
+
+
+/* TEXTO 4*/
+.conteudo,
+.conteudo4 {
+  max-width: 900px;
+}
+
+.titulo {
+  font-size: 48px;
+}
+
+.texto,
+.texto4 {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+/* IMAGEM IF*/
+.fase img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 16px;
+  border: 2px solid #00f7ff;
+  box-shadow: 0 0 10px #00f7ff, 0 0 0, 6px rgba(0, 247, 255, .8);
+  transition: transform .3s ease;
+}
+
+.fase img:hover {
+  transform: scale(1.05);
+}
+
+
+/* TEXTO 5*/
+.conteudo,
+.conteudo5 {
+  max-width: 900px;
+}
+
+.titulo {
+  font-size: 48px;
+}
+
+.texto,
+.texto5 {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+/* IMAGEM IF
+.partida img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 20px;
+  border: 2px solid #00f7ff;
+  box-shadow: 0 0 10px #00f7ff, 0 0 0, 10px rgba(0, 247, 255, .8);
+  transition: transform .3s ease;
+}
+
+.partida img:hover {
+  transform: scale(1.05);
+}*/
+
+.partida img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 20px;
+  border: 2px solid #00f7ff;
+  box-shadow:
+    0 0 10px rgba(0, 247, 255, 0.6),
+    0 0 25px rgba(0, 247, 255, 0.4),
+    0 0 40px rgba(0, 247, 255, 0.2);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.partida img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 15px rgba(0, 247, 255, 0.8),
+    0 0 35px rgba(0, 247, 255, 0.6),
+    0 0 60px rgba(0, 247, 255, 0.4);
+}
+
+
+
+
+/* TITULO 2*/
+/*
+.conteudo,
+.conteudo5 {
+  max-width: 900px;
+}
+
+.titulo2 {
+  font-size: 20px;
+}*/
+
+.titulo2 {
+  font-size: 20px;
+  margin-bottom: 100px;
+  /* espaçamento grande */
+}
+
+@media (max-width: 768px) {
+  .titulo2 {
+    margin-bottom: 70px;
+  }
+}
+
+
+/*
+.texto,
+.texto5 {
+  font-size: 22px;
+  line-height: 1.4;
+}
+*/
+
+.titulo3 {
+  font-size: 20px;
+}
+
 /* RODAPÉ */
 /* ===== RODAPÉ COM NOMES (FINAL) ===== */
 .rodape {
@@ -203,4 +370,125 @@ body {
 
   transition: transform 0.8s ease, opacity 0.8s ease;
   will-change: transform, opacity;
+}
+
+
+/* ===== ESPAÇAMENTO ENTRE SEÇÕES ===== */
+.conteudo,
+.conteudo2,
+.inicio,
+.fase,
+.partida {
+  margin-bottom: 60px;
+}
+
+/* mobile: espaçamento um pouco menor */
+@media (max-width: 768px) {
+
+  .conteudo,
+  .conteudo2,
+  .inicio,
+  .fase,
+  .partida {
+    margin-bottom: 40px;
+  }
+}
+
+/* ===== RODAPÉ: DISCENTES E DOCENTES ===== */
+
+/* títulos Discente / Docente */
+.label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* rodapé mais organizado */
+.rodape {
+  flex-wrap: wrap;
+  margin-top: 80px;
+}
+
+/* garante que TODOS os nomes apareçam */
+.container,
+.container2 {
+  height: 60px;
+  /* espaço suficiente */
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .rodape {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .container,
+  .container2 {
+    width: 100%;
+  }
+}
+
+/* ===== AJUSTE NOMES NO MOBILE ===== */
+@media (max-width: 768px) {
+
+  .container,
+  .container2 {
+    height: 80px;
+    /* mais espaço vertical */
+  }
+
+  #nome,
+  #professor {
+    font-size: 20px;
+    transform: translateY(20px);
+    /* menos deslocamento */
+  }
+}
+
+
+/* ===== CORREÇÃO DEFINITIVA MOBILE (RODAPÉ) ===== */
+@media (max-width: 768px) {
+
+  .rodape {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container,
+  .container2 {
+    height: auto;
+    overflow: visible;
+    margin-bottom: 20px;
+  }
+
+  #nome,
+  #professor {
+    position: relative;
+    /* 🔴 chave da correção */
+    transform: none;
+    /* evita sair da tela */
+    opacity: 1;
+    /* sempre visível */
+    margin-top: 10px;
+  }
+}
+
+/* ===== MAPA RESPONSIVO (MOBILE) ===== */
+@media (max-width: 768px) {
+
+  .mapa-desktop {
+    display: none;
+    /* esconde o horizontal */
+  }
+
+  .mapa-mobile {
+    display: block;
+    /* mostra o vertical */
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
 }
